@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <algorithm>
-
+#include <bits/stdc++.h> 
 using namespace std;
 
 struct Process {
@@ -21,7 +19,7 @@ struct Process read(int i) {
     p.temp = p.pri;
     return p;
 }
-
+//FCFS
 void FCFS(struct Process p[], int n) {
     int ct = 0;
     float avgwt = 0, avgtat = 0;
@@ -38,7 +36,7 @@ void FCFS(struct Process p[], int n) {
     avgtat /= n, avgwt /= n;
     printf("\nAverage TurnAroundTime=%f\nAverage WaitingTime=%f", avgtat, avgwt);
 }
-
+//SJF
 void SJF(struct Process p[], int n) {
     int min_val, min_index;
     float avgwt = 0, avgtat = 0;
@@ -88,7 +86,7 @@ void SJF(struct Process p[], int n) {
     avgtat /= n, avgwt /= n;
     printf("\nAverage TurnAroundTime=%f\nAverage WaitingTime=%f", avgtat, avgwt);
 }
-
+//SRTF
 void SRTF(struct Process p[], int n) {
     int time = 0, remain = n;
     float avgwt = 0, avgtat = 0;
@@ -121,7 +119,7 @@ void SRTF(struct Process p[], int n) {
     avgtat /= n, avgwt /= n;
     printf("\nAverage TurnAroundTime=%f\nAverage WaitingTime=%f", avgtat, avgwt);
 }
-
+//Round Robin
 void RR(struct Process p[], int n, int tq) {
     int ct = 0, flag = 0, remaining = n;
     float avgwt = 0, avgtat = 0;
@@ -152,7 +150,7 @@ void RR(struct Process p[], int n, int tq) {
     avgtat /= n, avgwt /= n;
     printf("\nAverage TurnAroundTime=%f\nAverage WaitingTime=%f", avgtat, avgwt);
 }
-
+//PriorityScheduling
 void PriorityScheduling(struct Process p[], int n) {
     int remaining = n;
     float avgwt = 0, avgtat = 0;
